@@ -1,0 +1,12 @@
+*.xccheckout
+.DS_Store
+
+build/
+Documentation/
+
+*.pbxuser
+*.perspective
+*.perspectivev3
+
+*.mode1v3
+*.mode2v3
