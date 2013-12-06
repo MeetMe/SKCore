@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Jedidiah Laudenslayer' => 'jlaudenslayer@meetme.com' }
   s.source       = { :git => 'https://github.com/MeetMe/SKCore.git', :tag => 'v1.0' }
   s.platform     = :ios, '6.0'
-  s.source_files = '/**/*.{h,m}'
+  s.source_files = '**/*.{h,m}'
   s.requires_arc = true
   s.framework  = 'Foundation', 'UIKit', 'SystemConfiguration', 'CoreGraphics'
 end
