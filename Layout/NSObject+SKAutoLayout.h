@@ -15,8 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "UIView+SKAutoLayout.h"
-
 /**
  * Category to simplify creating and storing a set of constraints on any object.
  *
