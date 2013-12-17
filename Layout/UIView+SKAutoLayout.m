@@ -105,6 +105,11 @@
     return [self alignConstraint:attribute toItem:view withAttribute:alignAttribute constant:0.0];
 }
 
+- (NSLayoutConstraint *)alignToParent:(NSLayoutAttribute)align constant:(CGFloat)c
+{
+    return [self alignConstraint:align toItem:self.superview withAttribute:align constant:c];
+}
+
 - (NSLayoutConstraint *)alignToParent:(NSLayoutAttribute)align
 {
     return [self alignConstraint:align toParent:align];

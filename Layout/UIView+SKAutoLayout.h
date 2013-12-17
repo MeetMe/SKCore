@@ -91,6 +91,15 @@
  * Align a view to it's parent.
  *
  * @param align The attribute that should match it's parent
+ * @param c The constant value to add to the alignment.
+ * @return The NSLayoutConstraint created.
+ */
+- (NSLayoutConstraint *)alignToParent:(NSLayoutAttribute)align constant:(CGFloat)c;
+
+/**
+ * Align a view to it's parent.
+ *
+ * @param align The attribute that should match it's parent
  * @return The NSLayoutConstraint created.
  */
 - (NSLayoutConstraint *)alignToParent:(NSLayoutAttribute)align;
