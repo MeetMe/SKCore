@@ -183,6 +183,7 @@ static CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 
 - (UIColor *)getPixelColorAtLocation:(CGPoint)point
 {
+    point = CGPointMake(point.x*[UIScreen mainScreen].scale, point.y*[UIScreen mainScreen].scale);
     UIColor *color = nil;
     CGImageRef cgImage = self.CGImage;
     CGContextRef context = [self newOnePixelARGBBitmapContext];
