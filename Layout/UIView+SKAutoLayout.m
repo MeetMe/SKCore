@@ -128,11 +128,46 @@
 
 - (NSLayoutConstraint *)setAttribute:(NSLayoutAttribute)attribute equalTo:(CGFloat)value
 {
+    NSLayoutAttribute parentAttribute = attribute;
+    UIView *parentView = nil;
+
+    if (attribute == NSLayoutAttributeCenterX ||
+        attribute == NSLayoutAttributeCenterY ||
+        attribute == NSLayoutAttributeLeft ||
+        attribute == NSLayoutAttributeRight ||
+        attribute == NSLayoutAttributeTop ||
+        attribute == NSLayoutAttributeBottom)
+    {
+        parentView = self.superview;
+
+        switch (attribute)
+        {
+            case NSLayoutAttributeLeft:
+            case NSLayoutAttributeRight:
+            case NSLayoutAttributeCenterX:
+            {
+                parentAttribute = NSLayoutAttributeLeft;
+                break;
+            }
+
+            case NSLayoutAttributeTop:
+            case NSLayoutAttributeBottom:
+            case NSLayoutAttributeCenterY:
+            {
+                parentAttribute = NSLayoutAttributeTop;
+                break;
+            }
+
+            default:
+                break;
+        }
+    }
+
     return [NSLayoutConstraint constraintWithItem:self
                                         attribute:attribute
                                         relatedBy:NSLayoutRelationEqual
-                                           toItem:nil
-                                        attribute:attribute
+                                           toItem:parentView
+                                        attribute:parentAttribute
                                        multiplier:1.0
                                          constant:value];
 }

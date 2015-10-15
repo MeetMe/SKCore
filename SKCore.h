@@ -25,6 +25,11 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#define WEAKIFY(var, weakName) __weak typeof(var) weakName = (var);
+#define WEAKIFY_SELF(weakName) __weak typeof(self) weakName = (self);
+#define STRONGIFY(weakVar, strongName) __strong typeof(weakVar) strongName = (weakVar);
+#define SAFE_STRONGIFY(weakVar, strongName) __strong typeof(weakVar) strongName = (weakVar); if (strongName == nil) { return; };
+
 // -- Util
 
 #import "NSString+SKCore.h"
